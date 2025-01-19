@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Dictionary" parent="Theme.Material3.DynamicColors.DayNight.NoActionBar">
+        <item name="fontFamily">@font/madetommy</item>
+    </style>
+</resources>
