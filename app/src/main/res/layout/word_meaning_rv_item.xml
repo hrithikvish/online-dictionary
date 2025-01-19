@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="meaning"
+            type="com.hrithikvish.dictionary.xml_views.adapter.RvItemMeaning" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/partOfSpeechLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/partOfSpeechSrNoTv"
+                text="@{meaning.index}"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="?android:textColorPrimaryInverse"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="1." />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/partOfSpeechTvLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/part_of_speech_background"
+                android:paddingStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/partOfSpeechSrNoTv"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlSymmetry">
+
+                <TextView
+                    android:id="@+id/partOfSpeechTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="4dp"
+                    android:text="@{meaning.meaning.partOfSpeech}"
+                    android:textColor="?android:textColorPrimaryInverse"
+                    android:textSize="18sp"
+                    tools:ignore="RtlSymmetry"
+                    tools:text="Noun" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/definitionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/partOfSpeechLayout">
+
+            <TextView
+                android:id="@+id/definitionHeadTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/definition"
+                android:textColor="?android:textColorPrimaryInverse"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/definitionTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@{meaning.meaning.definition.definition}"
+                android:textColor="?android:textColorPrimaryInverse"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/definitionHeadTv"
+                app:layout_constraintTop_toTopOf="@id/definitionHeadTv"
+                tools:text="@string/dummy_lorem_ipsum_text" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/exampleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{meaning.meaning.definition.example.isEmpty() ? View.GONE : View.VISIBLE}"
+            app:layout_constraintTop_toBottomOf="@id/definitionLayout">
+
+            <TextView
+                android:id="@+id/exampleHeadTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/example"
+                android:textColor="?android:textColorPrimaryInverse"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/exampleTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@{meaning.meaning.definition.example}"
+                android:textColor="?android:textColorPrimaryInverse"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/exampleHeadTv"
+                app:layout_constraintTop_toTopOf="@id/exampleHeadTv"
+                tools:text="@string/dummy_lorem_ipsum_text" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

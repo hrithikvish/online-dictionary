@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Dictionary</string>
+    <string name="search_word">Search word</string>
+    <string name="definition">Definition:</string>
+    <string name="dummy_lorem_ipsum_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed elit velit. Phasellus pellentesque risus augue, vel condimentum nibh consectetur at. Phasellus convallis velit nec ante pretium mattis.</string>
+    <string name="example">Example:</string>
+</resources>
